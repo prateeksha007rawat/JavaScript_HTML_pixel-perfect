@@ -20,6 +20,7 @@
 
     <link rel="stylesheet" href="landing_page.css" />
   </head>
+
   <body>
     <ng-container>
       <!-- Header -->
@@ -27,11 +28,12 @@
         <div class="container header-container">
           <div class="logo">nullBrains.</div>
           <nav>
-            <ul class="nav-links">
-              <li><a class="home-text" href="#">Home</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <ul class="nav-links" id="navLinks">
+              <li><a class="home-text" href="#home">Home</a></li>
+              <li><a href="#feature">Features</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li>
                 <a href="#"><i class="fas fa-search"></i></a>
               </li>
@@ -159,7 +161,7 @@
       </div>
 
       <!-- First Section -->
-      <section class="first-section">
+      <section id="home" class="first-section">
         <h1 class="first-title">Start Crafting Your</h1>
         <h1 class="first-subtitle">Next Great Idea</h1>
         <p class="first-description">
@@ -187,7 +189,7 @@
       </section>
 
       <!-- Features Section -->
-      <section class="feature-section">
+      <section id="feature" class="feature-section">
         <div class="feature-card">
           <div class="feature-image">
             <img src="assets/sample1.png" alt="Boost Productivity" />
@@ -428,7 +430,7 @@
       </section>
 
       <!-- Blog Section -->
-      <section class="blog-section">
+      <section id="blog" class="blog-section">
         <div class="blog-header">
           <h1 class="project-title">The Project Blog</h1>
           <p class="project-subtitle">
@@ -540,7 +542,7 @@
       </section>
 
       <!-- Footer -->
-      <footer>
+      <footer id="contact">
         <div class="container">
           <div class="footer-top">
             <div class="footer-links">
