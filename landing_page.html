@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nullBrains.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="landing_page.css" />
+  </head>
+  <body>
+    <ng-container>
+      <!-- Header -->
+      <header>
+        <div class="container header-container">
+          <div class="logo">nullBrains.</div>
+          <nav>
+            <ul class="nav-links">
+              <li><a class="home-text" href="#">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+              <li>
+                <a href="#"><i class="fas fa-search"></i></a>
+              </li>
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="#" class="btn btn-secondary" id="signInBtn">Sign In</a>
+            <a href="#" class="btn btn-primary" id="signUpBtn">Sign Up</a>
+          </div>
+        </div>
+        <hr class="solid" />
+      </header>
+
+      <!-- Sign Up Modal -->
+      <div class="modal-overlay" id="signUpModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 class="modal-title">Create an Account</h2>
+            <button class="modal-close" id="closeModal">&times;</button>
+          </div>
+          <form id="signUpForm" novalidate>
+            <div class="form-group">
+              <label for="fullName" class="form-label">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                class="form-input"
+                placeholder="Enter your full name"
+                required
+              />
+              <span class="error-message" id="fullNameError"
+                >Please enter your full name</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Enter your email address"
+                required
+              />
+              <span class="error-message" id="emailError"
+                >Please enter a valid email address</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="Choose a password"
+                required
+              />
+              <span class="error-message" id="passwordError"
+                >Password must be at least 8 characters</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-input"
+                placeholder="Confirm your password"
+                required
+              />
+              <span class="error-message" id="confirmPasswordError"
+                >Passwords do not match</span
+              >
+            </div>
+            <button type="submit" class="form-submit">Create Account</button>
+            <p class="form-text">
+              Already have an account?
+              <a href="#" id="switchToSignIn">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sign In Modal -->
+      <div class="modal-overlay" id="signInModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 class="modal-title">Sign In</h2>
+            <button class="modal-close" id="closeSignInModal">&times;</button>
+          </div>
+          <form id="signInForm" novalidate>
+            <div class="form-group">
+              <label for="loginEmail" class="form-label">Email Address</label>
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-input"
+                placeholder="Enter your email address"
+                required
+              />
+              <span class="error-message" id="loginEmailError"
+                >Please enter a valid email address</span
+              >
+            </div>
+            <div class="form-group">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-input"
+                placeholder="Enter your password"
+                required
+              />
+              <span class="error-message" id="loginPasswordError"
+                >Please enter your password</span
+              >
+            </div>
+            <button type="submit" class="form-submit">Sign In</button>
+            <p class="form-text">
+              Don't have an account? <a href="#" id="switchToSignUp">Sign Up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- First Section -->
+      <section class="first-section">
+        <h1 class="first-title">Start Crafting Your</h1>
+        <h1 class="first-subtitle">Next Great Idea</h1>
+        <p class="first-description">
+          Simplifying the creation of landing pages, blog posts, application
+          pages and so much more!
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary">Purchase Now</a>
+          <a href="#" class="btn btn-secondary">Learn More</a>
+          <span class="badge">only $15/mo</span>
+        </div>
+      </section>
+
+      <!-- Companies By Section -->
+      <section class="companies-section">
+        <h3 class="companies-title">Trusted by top leading companies.</h3>
+        <div class="company-logos">
+          <img src="assets/logo1.png" alt="Disney" class="company-logo" />
+          <img src="assets/logo2.png" alt="Google" class="company-logo" />
+          <img src="assets/logo3.png" alt="HubSpot" class="company-logo" />
+          <img src="assets/logo4.png" alt="YouTube" class="company-logo" />
+          <img src="assets/logo5.png" alt="Slack" class="company-logo" />
+          <img src="assets/logo6.png" alt="Shopify" class="company-logo" />
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="feature-section">
+        <div class="feature-card">
+          <div class="feature-image">
+            <img src="assets/sample1.png" alt="Boost Productivity" />
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Boost Productivity</h3>
+            <p class="feature-description">
+              Build an atmosphere that creates productivity in your organization
+              and your company culture.
+            </p>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Maximize productivity and growth</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Speed past your competition</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Learn the top techniques</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-content">
+            <h3 class="feature-title">Automated Tasks</h3>
+            <p class="feature-description">
+              Save time and money with our revolutionary services. We are the
+              leaders in the industry.
+            </p>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Automated task management workflow</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Detailed analytics for your data</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon"><i class="fas fa-check"></i></span>
+                <span>Some awesome integrations</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-image">
+            <img src="assets/sample2.png" alt="Automated Tasks" />
+          </div>
+        </div>
+      </section>
+
+      <!-- All Features Section -->
+      <section class="all-features">
+        <h2 class="feature-all-title">Our Features</h2>
+        <p class="feature-all-subtitle">
+          Check out our list of awesome features below.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="feature-box-title">Certifications</h3>
+            <p class="feature-box-text">
+              Each of our plan will provide you and your team with
+              certifications.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h3 class="feature-box-title">Notifications</h3>
+            <p class="feature-box-text">
+              Send out notifications to all your customers to keep them engaged.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-box"></i>
+            </div>
+            <h3 class="feature-box-title">Bundles</h3>
+            <p class="feature-box-text">
+              High-quality bundles of awesome tools to help you out.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="feature-box-title">Developer Tools</h3>
+            <p class="feature-box-text">
+              Developer tools to help grow your application and keep it
+              up-to-date.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <h3 class="feature-box-title">Building Blocks</h3>
+            <p class="feature-box-text">
+              The right kind of building blocks to take your company to the next
+              level.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon icon-blue">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <h3 class="feature-box-title">Coupons</h3>
+            <p class="feature-box-text">
+              Coupons system to provide special offers and discounts for your
+              app.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section class="team-section">
+        <p class="team-title">OUR TEAM</p>
+        <h2 class="team-subtitle">
+          An incredible team of <br />
+          amazing individuals
+        </h2>
+
+        <div class="icon-div"></div>
+
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp1.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Freddy Smith</h3>
+            <p class="member-position">CEO and Founder</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp2.png" alt="Carl Jones" />
+            </div>
+
+            <h3 class="member-name">Carl Jones</h3>
+            <p class="member-position">CTO and Co-founder</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp3.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Susan Peterson</h3>
+            <p class="member-position">Marketing Directory</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp4.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Tommy Barnes</h3>
+            <p class="member-position">Designer</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp5.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Ron Jensen</h3>
+            <p class="member-position">Senior Developer</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp6.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Pete Tompkins</h3>
+            <p class="member-position">Web Developer</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp7.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Kelly Richards</h3>
+            <p class="member-position">Sales Manager</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <div class="team-member">
+            <div class="member-avatar">
+              <img src="assets/emp8.png" alt="Freddy Smith" />
+            </div>
+            <h3 class="member-name">Alexis Jordan</h3>
+            <p class="member-position">Affiliate Manager</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section class="blog-section">
+        <div class="blog-header">
+          <h1 class="project-title">The Project Blog</h1>
+          <p class="project-subtitle">
+            Designs and layouts to help with your app.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <div class="blog-card purple-bg">
+            <img src="assets/sample9.png" alt="Blog Image" class="blog-image" />
+            <div class="blog-content">
+              <span class="purple-text blog-category">RESOURCES</span>
+              <h3 class="blog-title">Refreshing Designs</h3>
+              <p class="blog-text">
+                Quench satisfying designs to help you stir up emotion and tell a
+                story.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-card blue-bg">
+            <img
+              src="assets/sample10.png"
+              alt="Blog Image"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <span class="blue-text blog-category">LIFESTYLE</span>
+              <h3 class="blog-title">Healthier Lifestyle</h3>
+              <p class="blog-text">
+                Living a healthier lifestyle will help with your productivity
+                and your mind.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-card amber-bg">
+            <img
+              src="assets/sample11.png"
+              alt="Blog Image"
+              class="blog-image"
+            />
+            <div class="blog-content">
+              <span class="blog-category amber-text">ENTERTAINMENT</span>
+              <h3 class="blog-title">Gaming Evolution</h3>
+              <p class="blog-text">
+                Learn about the evolution of gaming and how it started a
+                revolution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-small-grid">
+          <div class="blog-card-small">
+            <img
+              src="assets/sample12.png"
+              alt="Blog Small Image"
+              class="blog-card-small-image"
+            />
+            <div class="blog-card-small-content">
+              <span class="blog-small-category pastel-blue-bg"
+                >INSPIRATION</span
+              >
+              <h4 class="blog-card-small-title">
+                Best Workstations of the Year
+              </h4>
+              <p class="blog-card-small-text">
+                Check out these inspiring workstations to get ideas on how to
+                level-up your workstation.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-card-small">
+            <img
+              src="assets/sample13.png"
+              alt="Blog Small Image"
+              class="blog-card-small-image"
+            />
+            <div class="blog-card-small-content">
+              <span class="blog-small-category red-bg">FOOD</span>
+              <h4 class="blog-card-small-title">Eating for Productivity</h4>
+              <p class="blog-card-small-text">
+                Learn how to be more disciplined in your diet and achieve
+                greater productivity.
+              </p>
+            </div>
+          </div>
+
+          <div class="blog-card-small">
+            <img
+              src="assets/sample14.png"
+              alt="Blog Small Image"
+              class="blog-card-small-image"
+            />
+            <div class="blog-card-small-content">
+              <span class="blog-small-category pastel-purple-bg"
+                >RESOURCES</span
+              >
+              <h4 class="blog-card-small-title">A Design Mind-set</h4>
+              <p class="blog-card-small-text">
+                What does it mean to have a design mind-set? Learn how to
+                improve your eye for design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="footer-top">
+            <div class="footer-links">
+              <a href="#">About</a>
+              <a href="#">Blog</a>
+              <a href="#">Team</a>
+              <a href="#">Pricing</a>
+              <a href="#">Contact</a>
+              <a href="#">Terms</a>
+            </div>
+          </div>
+          <div class="footer-middle">
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2025 SomeCompany, Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </ng-container>
+
+    <script src="landing_page.js"></script>
+  </body>
+</html>
