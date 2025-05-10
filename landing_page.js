@@ -1,10 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("menuToggle").addEventListener("click", function () {
+    document.getElementById("navLinks").classList.toggle("show");
+  });
   // Add smooth scrolling to all links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
+      const target = document.querySelector(this.getAttribute("href"));
+      const offset = 150; // desired margin from the top
+      const targetPosition =
+        target.getBoundingClientRect().top + window.pageYOffset - offset;
+      // document.querySelector(this.getAttribute("href")).scrollIntoView({
+      //   behavior: "smooth"
+      // });
+
+      window.scrollTo({
+        top: targetPosition,
         behavior: "smooth",
       });
     });
@@ -200,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Helper functions for form validation
   function showError(input, errorElement, errorMessage) {
     input.classList.add("error");
-    errorElement.textContent = errorMessage;
+    // errorElement.textContent = errorMessage;
     errorElement.style.display = "block";
   }
 
