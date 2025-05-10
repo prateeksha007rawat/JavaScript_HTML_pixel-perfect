@@ -70,6 +70,10 @@ ul {
 header {
   padding: 1.5rem 0;
   background-color: var(--white);
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  width: 100%;
 }
 
 .header-container {
@@ -95,6 +99,14 @@ hr.solid {
   gap: 3rem;
   color: var(--light-text);
 }
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
 .nav-links .home-text {
   color: var(--primary-color);
 }
@@ -111,6 +123,7 @@ hr.solid {
 .first-section {
   padding: var(--section-padding);
   text-align: center;
+  margin-top: 150px;
 }
 
 .first-title {
@@ -749,6 +762,20 @@ footer {
   }
   .nav-links {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #333; */
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
   }
   hr.solid {
     margin: 2rem 4rem;
@@ -774,9 +801,9 @@ footer {
   hr.solid {
     margin: 2rem 2rem;
   }
-  .nav-links {
-    display: none;
-  }
+  /* .nav-links {
+        display: none;
+      } */
 
   :root {
     --section-padding: 4rem 4rem;
